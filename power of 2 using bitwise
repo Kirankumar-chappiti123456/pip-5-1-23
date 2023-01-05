@@ -1,0 +1,33 @@
+#include <stdio.h>
+#define n 4
+int main()
+{
+    
+    ((n&(n-1))==0)?printf("power of 2"):printf("not power of 2");
+} 
+logic :
+   0100 
+   0011
+   ----
+ & 0000
+   ----
+   0000 // hence it is a power of 2 =4;
+   
+   using function pointer:
+   
+#include <stdio.h>
+
+int power(int n)
+{
+
+    ((n&(n-1))==0)?printf("power of 2"):printf("not power of 2");
+} 
+int main()
+{
+    int n;
+    printf("enter the number:");
+    scanf("%d",&n);
+    int (*fptr)(int)=power;
+    fptr(n);
+    
+}
