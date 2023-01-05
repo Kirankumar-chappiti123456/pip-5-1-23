@@ -25,3 +25,12 @@ int main()
 }
 
 using dynamic allocation.
+
+
+
+int n;
+    printf("enter the size of string:");
+    scanf("%d",&n);
+    char *ptr=(char*)malloc(n*sizeof(char));
+    printf("enter the character:");
+    scanf("%s",ptr);
