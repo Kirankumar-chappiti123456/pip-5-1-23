@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+    char a[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+    int *ptr=(int*)a;
+    ptr=ptr+4;
+    printf("%d",*(char*)ptr);
+}
+
+
+
+
+using function pointer:
+
+#include<stdio.h>
+int fun(int *ptr)
+{
+   
+    ptr=ptr+4;
+    printf("%d",*(char*)ptr);
+}
+int main()
+{
+     char a[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+    int *ptr=(int*)a;
+    int (*fptr)(int *)=fun;
+    fptr(ptr);
+}
