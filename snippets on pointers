@@ -1,0 +1,47 @@
+#include<stdio.h>
+int main()
+{
+	char *ptr;
+	char string[] = "i work at thunder soft";
+	ptr = string;    //each string character have the own address and ptr pointer is pointing to the string and the ptr+6 is pointing to the 6 index.
+	ptr += 6;
+	printf("%s",ptr);
+	return 0;
+}
+output:
+at thunder soft
+
+
+
+#include<stdio.h>
+int main()
+{
+    const int a = 5;
+    const int *ptr;
+    ptr = &a;           //assignment of read-only location '*ptr'. the pointer to const we cannot change the value but we can change the address.
+    *ptr = 10;
+    printf("%d\n", a);
+    return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+	printf("%d", sizeof(void *)); // size of void is "1". size of void pointer is 8. it is different in 64 and 32 and 16.
+}
+
+
+#include<stdio.h>
+void function(char**);
+int main()
+{
+	char *arr[] = { "ant", "bat", "cat", "dog", "egg", "fly" };
+	function(arr); // here the array is pointing to the "ant".
+	return 0;
+}
+void function(char **ptr)
+{
+	char *ptr1;
+	ptr1 = (ptr += sizeof(int))[-2];  // here the ptr1 is size of int =4 and the ptr1 is pointing to the "eggs" and [-2] means back step and it is pointing to the "cat" and displaying the "cat" as the final output. 
+	printf("%s\n", ptr1);
+}
