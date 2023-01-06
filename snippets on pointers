@@ -60,3 +60,13 @@ int main()
 	printf("%d\n", *((int*)ptr + 1 + (3-2))); the pointer variable store the address of first value.here we using the bodmas rule and first we sloving () brackets and then addition and increament by 2 .and it is showing the 2 index value.
 	return 0;
 }
+
+
+#include<stdio.h>
+int main(){
+	int a = 130;
+	char *ptr;
+	ptr = (char *)&a; // here the pointer pointing the char and the value it is integer and we type cast into char and the char is range is -128 to 127 and the integer value is 130 and gives the some negative value as the output. 
+	printf("%d ",*ptr);
+	return 0;
+}
